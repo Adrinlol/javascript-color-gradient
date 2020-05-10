@@ -36,9 +36,9 @@ class Gradient {
 
         this.getColor = props => {
             if (isNaN(props)) {
-                throw new TypeError(`midPoint should be a number`);
+                throw new TypeError(`getColor should be a number`);
             } else if (props <= 0) {
-                throw new TypeError(`midPoint should be greater than ${props}`);
+                throw new TypeError(`getColor should be greater than ${props}`);
             } else {
                 let segment = (maxNum - 0) / (gradients.length);
                 let index = Math.min(Math.floor((Math.max(props, 0) - 0) / segment), gradients.length - 1);
