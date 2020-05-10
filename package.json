@@ -1,0 +1,27 @@
+{
+  "name": "color-gradient",
+  "version": "1.0.0",
+  "description": "color-gradient is a lightweight JavaScript library, used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints. ",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adrinlol/color-gradient.git"
+  },
+  "keywords": [
+    "color",
+    "colour",
+    "palette",
+    "color-picker",
+    "color-wavelengths"
+
+  ],
+  "author": "Lasha Kakabadze <l.qqbadze@gmail.com> (https://zenn.ge/)",
+  "license": "MIT",
+  "bugs": {
+    "url" : "https://github.com/Adrinlol/color-gradient/issues"
+  },
+  "homepage": "https://github.com/Adrinlol/color-gradient#readme"
+}
