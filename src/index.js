@@ -29,7 +29,7 @@ class Gradient {
         this.getArray = () => {
             let gradientArray = [];
             for (let i = 1; i < maxNum + 1; i++) {
-                gradientArray.push("#" + gradients[0].getColor(i))
+                gradientArray.push(gradients[0].getColor(i))
             }
             return gradientArray;
         }
