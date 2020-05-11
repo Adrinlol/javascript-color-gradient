@@ -37,7 +37,7 @@ console.log(colorGradient.getArray()) // outputs ["#4e4ab9", "#5d68c4", "#6d86ce
 console.log(colorGradient.getColor(3)) // outputs #6d86ce
 ```
 
-## Examples
+## Example
 Implementing javascript-color-gradient library into React.js application, using two gradient colors and 4 midpoints.
 
 ![image](https://user-images.githubusercontent.com/48876996/81550844-e0d7c700-9391-11ea-8222-def50638b326.png)
