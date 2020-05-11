@@ -24,13 +24,13 @@ colorGradient.setGradient(color1, color2);
 ```
 ## Methods
 
-### setGradient(color1, color2) - sets two or more hex color values. Should always be defined.
+#### setGradient(color1, color2) - sets two or more hex color values. Should always be defined.
 
-### setMidpoint(n) - sets the number range from 0 to n. By default n is 10.
+#### setMidpoint(n) - sets the number range from 0 to n. By default n is 10.
 
-### getArray()  - returns an array of hex colors. Requires no parameters.
+#### getArray()  - returns an array of hex colors. Requires no parameters.
 
-### getColor(n) - returns certain hex color, where n is a requested number of midpoint colors.
+#### getColor(n) - returns certain hex color, where n is a requested number of midpoint colors.
 
 ```javascript
 console.log(colorGradient.getArray()) // outputs ["#4e4ab9", "#5d68c4", "#6d86ce", "#7ca4d9", "#8bc2e3"]
