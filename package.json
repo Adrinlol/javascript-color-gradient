@@ -1,6 +1,6 @@
 {
   "name": "javascript-color-gradient",
-  "version": "0.0.0-development",
+  "version": "1.2.2",
   "description": "javascript-color-gradient is a lightweight JavaScript library, used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints. ",
   "main": "dist/index.js",
   "scripts": {
