@@ -26,7 +26,7 @@ colorGradient.setGradient(color1, color2);
 
 #### setGradient(color1, color2) - sets two or more hex color values. Should always be defined.
 
-#### setMidpoint(n) - sets the number range from 0 to n. By default n is 10.
+#### setMidpoint(n) - sets the number range to n. By default n is 10.
 
 #### getArray()  - returns an array of hex colors. Requires no parameters.
 
