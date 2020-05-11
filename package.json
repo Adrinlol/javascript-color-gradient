@@ -1,14 +1,19 @@
 {
   "name": "javascript-color-gradient",
-  "version": "1.0.1",
-  "description": "color-gradient is a lightweight JavaScript library, used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints. ",
-  "main": "src/index.js",
+  "version": "0.0.0-development",
+  "description": "javascript-color-gradient is a lightweight JavaScript library, used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints. ",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "mocha src/index.test.js -w"
+    "test": "mocha src/index.test.js -w",
+    "prebuild": "rimraf dist",
+    "build": "npm-run-all --parallel build:*",
+    "build:main": "babel --out-dir dist --ignore *.test.js src",
+    "build:umd": "webpack --output-filename index.umd.js",
+    "build:umd.min": "webpack --output-filname index.umd.min.js -p"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Adrinlol/color-gradient.git"
+    "url": "https://github.com/Adrinlol/javascript-color-gradient.git"
   },
   "keywords": [
     "color",
@@ -20,11 +25,25 @@
   "author": "Lasha Kakabadze <l.qqbadze@gmail.com> (https://zenn.ge/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Adrinlol/color-gradient/issues"
+    "url": "https://github.com/Adrinlol/javascript-color-gradient/issues"
   },
-  "homepage": "https://github.com/Adrinlol/color-gradient#readme",
+  "homepage": "https://github.com/Adrinlol/javascript-color-gradient#readme",
   "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-loader": "8.1.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-stage-2": "6.24.1",
     "chai": "4.2.0",
-    "mocha": "7.1.2"
+    "mocha": "7.1.2",
+    "npm-run-all": "4.1.5",
+    "rimraf": "3.0.2",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
   }
 }
