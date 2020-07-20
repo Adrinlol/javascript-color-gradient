@@ -8,7 +8,7 @@ Lightweight JavaScript library, used to generate an array of color gradients by 
 
 ## Demo
 
-https://codesandbox.io/s/sharp-benz-csgfd
+https://codesandbox.io/s/javascript-color-gradient-csgfd
 
 ## Installation
 
