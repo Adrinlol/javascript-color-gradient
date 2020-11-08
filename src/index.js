@@ -1,5 +1,5 @@
 class Gradient {
-    constructor(gradients = '', maxNum = 10, colors = ['', '']) {
+    constructor(gradients = '', maxNum = 10, colors = ['', ''], intervals = []) {
 
         const setColors = props => {
             if (props.length < 2) {
@@ -7,15 +7,27 @@ class Gradient {
             } else {
                 let increment = maxNum / (props.length - 1);
                 let firstGradient = new GradientColor();
+                let lower = 0;
+                let upper = 0 + increment;
                 firstGradient.setGradient(props[0], props[1]);
-                firstGradient.setMidpoint(0, 0 + increment);
+                firstGradient.setMidpoint(lower, upper);
                 gradients = [firstGradient];
+                intervals = [{
+                    lower,
+                    upper
+                }];
 
                 for (let i = 1; i < props.length - 1; i++) {
                     let gradientColor = new GradientColor();
+                    let lower = 0 + increment * i;
+                    let upper = 0 + increment * (i + 1);
                     gradientColor.setGradient(props[i], props[i + 1]);
-                    gradientColor.setMidpoint(0 + increment * i, 0 + increment * (i + 1));
+                    gradientColor.setMidpoint(lower, upper);
                     gradients[i] = gradientColor;
+                    intervals[i] = {
+                        lower,
+                        upper
+                    };
                 }
                 colors = props;
             }
@@ -28,8 +40,13 @@ class Gradient {
 
         this.getArray = () => {
             let gradientArray = [];
-            for (let i = 1; i < maxNum + 1; i++) {
-                gradientArray.push(gradients[0].getColor(i))
+            for (let j = 0; j < intervals.length; j++) {
+                const interval = intervals[j];
+                const start = interval.lower === 0 ? 1 : Math.ceil(interval.lower);
+                const end = interval.upper === maxNum ? interval.upper + 1 : Math.ceil(interval.upper);
+                for (let i = start; i < end; i++) {
+                    gradientArray.push(gradients[j].getColor(i))
+                }
             }
             return gradientArray;
         }
@@ -80,7 +97,6 @@ class GradientColor {
             }
         }
 
-
         const generateHex = (number, start, end) => {
             if (number < minNum) {
                 number = minNum;
@@ -95,6 +111,7 @@ class GradientColor {
             let finalBase = Math.round(average * (number - minNum) + startBase);
             return (finalBase.toString(16));
         }
+
         const getHexColor = props => {
             return props.substring(props.length - 6, props.length);
         }
