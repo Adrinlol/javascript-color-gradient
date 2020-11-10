@@ -1,14 +1,13 @@
-import { join } from 'path'
+const path = require("path");
 
-const include = join(__dirname, 'src');
-
+const include = path.join(__dirname, "src");
 
 export default {
-    entry: './src/index',
-    output: {
-        path: join(__dirname, 'dist'),
-        libraryTarget: 'umd',
-        library: 'javascriptColorGradient',
-    },
-    devtool: 'source-map'
-}
+  entry: "./src/index",
+  output: {
+    path: include,
+    libraryTarget: "umd",
+    library: "javascriptColorGradient",
+  },
+  devtool: "source-map",
+};
