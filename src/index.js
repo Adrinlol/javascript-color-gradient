@@ -109,7 +109,8 @@ class GradientColor {
             let endBase = parseInt(end, 16);
             let average = (endBase - startBase) / midPoint;
             let finalBase = Math.round(average * (number - minNum) + startBase);
-            return (finalBase.toString(16));
+            let balancedFinalBase = finalBase < 16 ? "0" + finalBase.toString(16) : finalBase.toString(16);
+            return balancedFinalBase;
         }
 
         const getHexColor = props => {
