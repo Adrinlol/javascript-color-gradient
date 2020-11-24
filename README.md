@@ -4,7 +4,7 @@
 
 ![MIT License](https://img.shields.io/npm/l/javascript-color-gradient)
 ![Version](https://img.shields.io/github/package-json/v/adrinlol/javascript-color-gradient)
-![Issue tracking](https://img.shields.io/github/issues-raw/adrinlol/javascript-color-gradient)
+![Size](https://img.shields.io/bundlephobia/min/javascript-color-gradient)
 ![GitHub stars](https://img.shields.io/github/stars/Adrinlol/javascript-color-gradient?style=social)
 
 Lightweight JavaScript library, used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints.
