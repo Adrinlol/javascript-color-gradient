@@ -1,30 +1,51 @@
-<img align="right" src="https://mymodernmet.com/wp/wp-content/uploads/2018/09/color-theory-basics.jpg" width="300"/>
-
-## javascript-color-gradient
+<div>
+    <img src="https://mymodernmet.com/wp/wp-content/uploads/2018/09/color-theory-basics.jpg" height="140">
+    <h1>JavasScript Color Gradient</h1>
+    <p>Lightweight JavaScript library, used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints.</p>
+</div>
 
 ![MIT License](https://img.shields.io/npm/l/javascript-color-gradient)
+[![](https://img.shields.io/npm/dm/javascript-color-gradient)](https://www.npmjs.com/package/javascript-color-gradient)
 ![Version](https://img.shields.io/github/package-json/v/adrinlol/javascript-color-gradient)
 ![Size](https://img.shields.io/bundlephobia/min/javascript-color-gradient)
-![GitHub stars](https://img.shields.io/github/stars/Adrinlol/javascript-color-gradient?style=social)
-
-Lightweight JavaScript library, used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints.
-
-## Demo
-
-See [Live Preview on CodeSandbox](https://codesandbox.io/s/javascript-color-gradient-csgfd).
-
-**Note:** All the examples are using ES6, be sure is supported in your browser or modify as needed, Chrome recommended.
 
 ## Installation
+
+For Node.js: Install the `javascript-color-gradient` npm module:
 
 ```bash
 npm install javascript-color-gradient
 ```
 
-or
+Then import the module into your JavaScript:
 
-```bash
-yarn add javascript-color-gradient
+```javascript
+import Gradient from "javascript-color-gradient";
+```
+
+## Demo
+
+[A demo is worth a thousand words](https://codesandbox.io/s/javascript-color-gradient-csgfd).
+
+**Note:** All the examples are using ES6, be sure is supported in your browser or modify as needed, Chrome recommended.
+
+## Methods
+
+| Method           |     | Description                                                                              |
+| ---------------- | --- | ---------------------------------------------------------------------------------------- |
+| `setGradient()`  |     | Initializes `colorGradient` with two or more hex color values. Should always be defined. |
+| `setMidpoint(n)` |     | Defines number of midpoints. Defaults to 10.                                             |
+| `getArray()`     |     | Returns an array of hex color values .                                                   |
+| `getColor(n)`    |     | Returns single hex color value corresponding to the provided index.                      |
+
+Let's see them in action:
+
+```javascript
+console.log(colorGradient.getArray());
+// ["#4e4ab9", "#5d68c4", "#6d86ce", "#7ca4d9", "#8bc2e3"]
+
+console.log(colorGradient.getColor(3));
+//  #6d86ce
 ```
 
 ## Usage
@@ -34,76 +55,16 @@ Using two color gradients
 ```javascript
 import Gradient from "javascript-color-gradient";
 
-const colorGradient = new Gradient();
-
-const color1 = "#3F2CAF";
-const color2 = "#8BC2E3";
-
-colorGradient.setGradient(color1, color2);
+colorGradient.setGradient("#3F2CAF", "#8BC2E3");
 ```
 
 Or more:
 
 ```javascript
-import Gradient from "javascript-color-gradient";
+import colorGradient from "javascript-color-gradient";
 
-const colorGradient = new Gradient();
-
-const color1 = "#3F2CAF";
-const color2 = "#e9446a";
-const color3 = "#edc988";
-const color4 = "#607D8B";
-
-colorGradient.setMidpoint(20);
-
-colorGradient.setGradient(color1, color2, color3, color4);
+colorGradient.setGradient("#3F2CAF", "#e9446a", "#edc988", "#607D8B");
 ```
-
-## Methods
-
-To set two or more hex color values. Should always be defined.
-
-```javascript
-setGradient(color1, color2);
-```
-
-To set the number range to n. By default n is 10.
-
-```javascript
-setMidpoint(n);
-```
-
-To return an array of hex colors. Requires no parameters.
-
-```javascript
-getArray();
-```
-
-To return certain hex color corresponding to the number.
-
-```javascript
-getColor(n);
-```
-
-Let's see them in action:
-
-```javascript
-console.log(colorGradient.getArray());
-// outputs ["#4e4ab9", "#5d68c4", "#6d86ce", "#7ca4d9", "#8bc2e3"]
-
-console.log(colorGradient.getColor(3));
-// outputs #6d86ce
-```
-
-## Example
-
-Implementing javascript-color-gradient library into React.js application, using two gradient colors and 10 midpoints.
-
-![1](https://user-images.githubusercontent.com/48876996/98634350-9c2ae980-233c-11eb-91f5-8c97b2194191.png)
-
-The following example is using four gradient colors and 20 midpoints.
-
-![1](https://user-images.githubusercontent.com/48876996/98633966-e8c1f500-233b-11eb-8b86-26a39c12b7d0.png)
 
 ## Contributing
 
@@ -113,7 +74,7 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-javascript-color-gradient is [MIT licensed.](https://github.com/Adrinlol/javascript-color-gradient/blob/master/LICENSE)
+`javascript-color-gradient` is [MIT licensed.](https://github.com/Adrinlol/javascript-color-gradient/blob/master/LICENSE)
 
 ## Contributors
 
