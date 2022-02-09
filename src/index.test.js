@@ -1,10 +1,5 @@
-const Gradient = require("./index");
+const colorGradient = require("./index");
 const expect = require("chai").expect;
-
-const colorGradient = new Gradient();
-const firstColor = "#3F2CAF";
-const secondColor = "#8BC2E3";
-const numberProps = 10;
 
 describe("javascript-color-gradient", function () {
   describe("getArray", function () {
@@ -21,7 +16,7 @@ describe("javascript-color-gradient", function () {
 
   describe("setGradient", function () {
     it("type should be an object", function () {
-      expect(colorGradient.setGradient(firstColor, secondColor)).to.satisfy(
+      expect(colorGradient.setGradient("#3F2CAF", "#8BC2E3")).to.satisfy(
         isObject
       );
 
@@ -31,12 +26,22 @@ describe("javascript-color-gradient", function () {
     });
   });
 
-  describe("getColor", function () {
-    it("should start with #", function () {
-      expect(colorGradient.getColor(numberProps)).to.satisfy(isNumber);
+  describe("getArray", function () {
+    it("array length should be 10", function () {
+      expect(colorGradient.getArray("#3F2CAF", "#8BC2E3")).to.satisfy(isArray);
 
-      function isNumber(item) {
-        return item.startsWith("#");
+      function isArray(object) {
+        return object.length === 10;
+      }
+    });
+  });
+
+  describe("getColor", function () {
+    it("should be equal to #8bc2e3", function () {
+      expect(colorGradient.getColor(10)).to.satisfy(isEqual);
+
+      function isEqual(item) {
+        return item === "#8bc2e3";
       }
     });
   });
