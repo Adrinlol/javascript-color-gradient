@@ -1,6 +1,6 @@
 <div>
     <img src="https://mymodernmet.com/wp/wp-content/uploads/2018/09/color-theory-basics.jpg" height="140">
-    <h1>JavasScript Color Gradient</h1>
+    <h1>JavaScript Color Gradient</h1>
     <p>Lightweight JavaScript library, used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints.</p>
 </div>
 
