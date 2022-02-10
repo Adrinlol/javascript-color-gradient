@@ -38,32 +38,42 @@ import Gradient from "javascript-color-gradient";
 | `getArray()`     |     | Returns an array of hex color values .                                                   |
 | `getColor(n)`    |     | Returns single hex color value corresponding to the provided index.                      |
 
-Let's see them in action:
-
-```javascript
-console.log(colorGradient.getArray());
-// ["#4e4ab9", "#5d68c4", "#6d86ce", "#7ca4d9", "#8bc2e3"]
-
-console.log(colorGradient.getColor(3));
-//  #6d86ce
-```
-
 ## Usage
 
-Using two color gradients
+Using 2 colors and default (10) midpoints to generate an array of hex color values:
 
 ```javascript
 import Gradient from "javascript-color-gradient";
 
-colorGradient.setGradient("#3F2CAF", "#8BC2E3");
+const gradientArray = colorGradient.setGradient("#3F2CAF", "e9446a").getArray();
+
+console.log(gradientArray);
+// ["#502ea8", "#6131a1", "#72339a", "#833693", "#94388d", "#a53a86", "#b63d7f", "#c73f78", "#d84271", "#e9446a"]
 ```
 
-Or more:
+Using 4 colors and 20 midpoints to generate an array of hex color values :
 
 ```javascript
 import colorGradient from "javascript-color-gradient";
 
-colorGradient.setGradient("#3F2CAF", "#e9446a", "#edc988", "#607D8B");
+const gradientArray = colorGradient
+  .setGradient("#3F2CAF", "#e9446a", "#edc988", "#607D8B")
+  .setMidpoint(20)
+  .getArray();
+
+console.log(gradientArray);
+// ["#5930a5", "#72339a", "#8c3790", "#a53a86", "#bf3e7b", "#d84271", "#e94b6c", "#ea5f70", "#ea7375", "#eb8779", …]
+```
+
+Using two colors and default (10) midpoints to return single hex color value corresponding to the provided index:
+
+```javascript
+import colorGradient from "javascript-color-gradient";
+
+const colorAtTwo = colorGradient.setGradient("#3F2CAF", "e9446a").getColor(2);
+
+console.log(colorAtTwo);
+// #502ea8
 ```
 
 ## Contributing
