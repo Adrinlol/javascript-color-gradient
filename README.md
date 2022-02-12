@@ -20,7 +20,7 @@ npm install javascript-color-gradient
 Then import the module into your JavaScript:
 
 ```javascript
-import Gradient from "javascript-color-gradient";
+import colorGradient from "javascript-color-gradient";
 ```
 
 ## Demo
@@ -43,7 +43,7 @@ import Gradient from "javascript-color-gradient";
 Using 2 colors and default (10) midpoints to generate an array of hex color values:
 
 ```javascript
-import Gradient from "javascript-color-gradient";
+import colorGradient from "javascript-color-gradient";
 
 const gradientArray = colorGradient.setGradient("#3F2CAF", "e9446a").getArray();
 
