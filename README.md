@@ -56,7 +56,7 @@ console.log(gradientArray);
 Using 4 colors and 20 midpoints to generate an array of hex color values :
 
 ```javascript
-import colorGradient from "javascript-color-gradient";
+import Gradient from "javascript-color-gradient";
 
 const gradientArray = new Gradient()
   .setColorGradient("#3F2CAF", "#e9446a", "#edc988", "#607D8B")
