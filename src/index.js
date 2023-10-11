@@ -10,7 +10,28 @@ class GradientColor {
       maxNum = maxNumber;
     };
 
-    this.getColor = (numberValue) => {
+
+    this.getColor = (numberValue,rgb=false) => {
+      if (numberValue && rgb) {
+        return {
+          r:parseInt(generateHex(
+            numberValue,
+            startColor.substring(0, 2),
+            endColor.substring(0, 2)
+          ),16),
+          g:parseInt(generateHex(
+            numberValue,
+            startColor.substring(2, 4),
+            endColor.substring(2, 4)
+          ),16),
+          b:parseInt(generateHex(
+            numberValue,
+            startColor.substring(4, 6),
+            endColor.substring(4, 6)
+          ),16),
+        }
+      }
+
       if (numberValue) {
         return (
           "#" +
@@ -110,7 +131,7 @@ class Gradient {
       return this;
     };
 
-    this.getColors = () => {
+    this.getColors = (rgb=false) => {
       const gradientColorsArray = [];
       for (let j = 0; j < intervals.length; j++) {
         const interval = intervals[j];
@@ -120,7 +141,7 @@ class Gradient {
             ? interval.upper + 1
             : Math.ceil(interval.upper);
         for (let i = start; i < end; i++) {
-          gradientColorsArray.push(colorGradients[j].getColor(i));
+          gradientColorsArray.push(colorGradients[j].getColor(i,rgb));
         }
       }
       return gradientColorsArray;
